@@ -143,9 +143,15 @@ FRAMEWORKS_BASE_SUBDIRS += \
 
 $(call inherit-product, build/target/product/full.mk)
 
-PRODUCT_LOCALES += hdpi
-
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := p970
 PRODUCT_DEVICE := p970
 PRODUCT_MODEL := LG Optimus Black
+
+
+PRODUCT_COPY_FILES += \
+         lewa/frameworks/lockscreen/WVGA/lockscreen.zip:/system/media/lockscreen.zip \
+         lewa/frameworks/theme/FWVGA/default.lwt:/system/media/default.lwt
+
+# only use two language for lewa branch
+PRODUCT_LOCALES := zh_CN en_US hdpi
